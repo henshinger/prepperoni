@@ -160,8 +160,8 @@ function stopRecording() {
   $("#conf_score").text(getAvg(confidences));
   $("#transcript").text(final_transcript);
   $("#download").show();
-  $("#record").hide();
-  $("#gum").hide();
+  $("#record").remove();
+  $("#gum").remove();
   play();
 }
 
