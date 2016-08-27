@@ -38,7 +38,7 @@ recognition.maxAlternatives = 1;
 
 function getAvg(grades) {
  if (grades.length < 1) return 0;
- return grades.map((c, i, arr) => c / arr.length).reduce((p, c) => c + p);
+ return grades.map((c, i, arr) => c * 100 / arr.length).reduce((p, c) => c + p);
 }
 
 
@@ -153,8 +153,10 @@ function stopRecording() {
   recordedVideo.controls = true;
   
   recognition.stop();
-  console.log(getAvg(confidences));
-  console.log(final_transcript);
+  recordButton.disabled = true;
+  $("#conf_score").text(getAvg(confidences));
+  $("#transcript").text(final_transcript);
+
 }
 
 function play() {
