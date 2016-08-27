@@ -36,6 +36,8 @@ recognition.lang = 'en-US';
 recognition.interimResults = true;
 recognition.maxAlternatives = 1;
 
+$("#download").hide()
+
 function getAvg(grades) {
  if (grades.length < 1) return 0;
  return grades.map((c, i, arr) => c * 100 / arr.length).reduce((p, c) => c + p);
@@ -153,15 +155,17 @@ function stopRecording() {
   recordedVideo.controls = true;
   
   recognition.stop();
-  recordButton.disabled = true;
+  // recordButton.disabled = true;
+  recordButton.destroy();
   $("#conf_score").text(getAvg(confidences));
   $("#transcript").text(final_transcript);
-
+  $("#download").show()
+  play()
 }
 
 function play() {
   var superBuffer = new Blob(recordedBlobs, {type: 'video/webm'});
-  recordedVideo.src = window.URL.createObjectURL(superBuffer);
+  gumVideo.src = window.URL.createObjectURL(superBuffer);
 }
 
 function download() {
