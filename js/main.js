@@ -165,7 +165,7 @@ function stopRecording() {
 
 function play() {
   var superBuffer = new Blob(recordedBlobs, {type: 'video/webm'});
-  gumVideo.src = window.URL.createObjectURL(superBuffer);
+  recordedVideo.src = window.URL.createObjectURL(superBuffer);
 }
 
 function download() {
