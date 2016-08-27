@@ -45,13 +45,13 @@ function getAvg(grades) {
 
 
 // window.isSecureContext could be used for Chrome
-var isSecureOrigin = location.protocol === 'https:' ||
-location.host === 'localhost';
-if (!isSecureOrigin) {
-  alert('getUserMedia() must be run from a secure origin: HTTPS or localhost.' +
-    '\n\nChanging protocol to HTTPS');
-  location.protocol = 'HTTPS';
-}
+// var isSecureOrigin = location.protocol === 'https:' ||
+// location.host === 'localhost';
+// if (!isSecureOrigin) {
+//   alert('getUserMedia() must be run from a secure origin: HTTPS or localhost.' +
+//     '\n\nChanging protocol to HTTPS');
+//   location.protocol = 'HTTPS';
+// }
 
 // Use old-style gUM to avoid requirement to enable the
 // Enable experimental Web Platform features flag in Chrome 49
@@ -106,7 +106,7 @@ function toggleRecording() {
   } else {
     stopRecording();
     recordButton.textContent = 'Start Recording';
-    playButton.disabled = false;
+    // playButton.disabled = false;
     downloadButton.disabled = false;
   }
 }
@@ -137,7 +137,7 @@ function startRecording() {
   }
   console.log('Created MediaRecorder', mediaRecorder, 'with options', options);
   recordButton.textContent = 'Stop Recording';
-  playButton.disabled = true;
+  // playButton.disabled = true;
   downloadButton.disabled = true;
   mediaRecorder.onstop = handleStop;
   mediaRecorder.ondataavailable = handleDataAvailable;
@@ -155,17 +155,19 @@ function stopRecording() {
   recordedVideo.controls = true;
   
   recognition.stop();
-  // recordButton.disabled = true;
-  recordButton.destroy();
+  recordButton.disabled = true;
+  // recordButton.destroy();
   $("#conf_score").text(getAvg(confidences));
   $("#transcript").text(final_transcript);
-  $("#download").show()
-  play()
+  $("#download").show();
+  $("#record").remove();
+  $("#gum").remove();
+  play();
 }
 
 function play() {
   var superBuffer = new Blob(recordedBlobs, {type: 'video/webm'});
-  gumVideo.src = window.URL.createObjectURL(superBuffer);
+  recordedVideo.src = window.URL.createObjectURL(superBuffer);
 }
 
 function download() {
