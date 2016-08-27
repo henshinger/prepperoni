@@ -151,11 +151,11 @@ function stopRecording() {
   mediaRecorder.stop();
   console.log('Recorded Blobs: ', recordedBlobs);
   recordedVideo.controls = true;
-  
+  alert(final_transcript)
   recognition.stop();
-  $("#conf_score").text("Confidence score: " + getAvg(confidences));
-  $("#transcript").text("Transcript:" + final_transcript);
-  $("#clarity_score").text("8/10");
+  $("#conf_score").text("Confidence score: " + (getAvg(confidences) * 100));
+  $("#transcript").text("Transcript: " + final_transcript);
+  $("#clarity_score").text("Clarity score: 8/10");
   play()
 }
 
