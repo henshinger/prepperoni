@@ -9,10 +9,10 @@ var gumVideo = document.querySelector('video#gum');
 var recordedVideo = document.querySelector('video#recorded');
 
 var recordButton = document.querySelector('button#record');
-var playButton = document.querySelector('button#play');
+// var playButton = document.querySelector('button#play');
 var downloadButton = document.querySelector('button#download');
 recordButton.onclick = toggleRecording;
-playButton.onclick = play;
+// playButton.onclick = play;
 downloadButton.onclick = download;
 
 
