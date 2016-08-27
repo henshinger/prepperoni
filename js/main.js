@@ -153,8 +153,10 @@ function stopRecording() {
   recordedVideo.controls = true;
   
   recognition.stop();
-  console.log(getAvg(confidences));
-  console.log(final_transcript);
+  $("#conf_score").text("Confidence score: " + getAvg(confidences));
+  $("#transcript").text("Transcript:" + final_transcript);
+  $("#clarity_score").text("8/10");
+  play()
 }
 
 function play() {
