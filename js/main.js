@@ -155,13 +155,13 @@ function stopRecording() {
   recordedVideo.controls = true;
   
   recognition.stop();
-  recordButton.disabled = true;
+  // recordButton.disabled = true;
   // recordButton.destroy();
   $("#conf_score").text(getAvg(confidences));
   $("#transcript").text(final_transcript);
   $("#download").show();
-  $("#record").remove();
-  $("#gum").remove();
+  $("#record").hide();
+  $("#gum").hide();
   play();
 }
 
