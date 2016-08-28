@@ -136,6 +136,7 @@ function startRecording() {
   $("#recorded").hide();
   $("#downloads").hide();
   $("#gum").show();
+  $("#see-results").hide();
   $("#question").text(randQuestion());
 
   recordedBlobs = [];
