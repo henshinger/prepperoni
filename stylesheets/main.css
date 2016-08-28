@@ -5,6 +5,10 @@
  *  that can be found in the LICENSE file in the root of the source
  *  tree.
  */
+/*body{
+   width: 1000px;
+}*/
+
  button {
   margin: 0 3px 10px 0;
   padding-left: 2px;
@@ -61,7 +65,7 @@ p {
 #container{
   opacity:0.8;
   background-image: url('../images/bg.png');
-  position:fixed;
+
   width:100%;
   height:100%;
   top:0px;
