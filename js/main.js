@@ -192,7 +192,7 @@ function fillerCounter(sentence) {
     total += 1;
   });
 
-  return Math.floor((obj["think"] + obj["maybe"] + obj["sorry"] + obj["possibly"] + obj["basically"] + obj["probably"]) * 100 / total);
+  return 100 - Math.floor((obj["think"] + obj["maybe"] + obj["sorry"] + obj["possibly"] + obj["basically"] + obj["probably"]) * 100 / total);
 }
 
 function stopRecording() {
