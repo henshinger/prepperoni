@@ -1,5 +1,5 @@
-
-
+$("#recorder").hide();
+$("#results-div").hide();
 var mediaSource = new MediaSource();
 mediaSource.addEventListener('sourceopen', handleSourceOpen, false);
 var mediaRecorder;
@@ -132,6 +132,8 @@ function toggleRecording() {
 
 // The nested try blocks will be simplified when Chrome 47 moves to Stable
 function startRecording() {
+  $("#recorder").hide();
+  $("#gum").show();
   $("#question").text(randQuestion());
 
   recordedBlobs = [];
@@ -170,6 +172,28 @@ function startRecording() {
   recognition.start();
 }
 
+function fillerCounter(sentence) {
+  var arr = sentence.split(" "),
+      obj = {},
+      total = 0;
+  obj["think"] = 0;
+  obj["maybe"] = 0;
+  obj["sorry"] = 0;
+  obj["possibly"] = 0;
+  obj["probably"] = 0;
+  obj["basically"] = 0;
+  arr.forEach(function(word){
+    if (obj.hasOwnProperty(word)) {
+      obj[word] += 1;
+    } else {
+      obj[word] = 1;
+    }
+    total += 1;
+  });
+
+  return Math.floor((obj["think"] + obj["maybe"] + obj["sorry"] + obj["possibly"] + obj["basically"] + obj["probably"]) * 100 / total);
+}
+
 function stopRecording() {
   mediaRecorder.stop();
   console.log('Recorded Blobs: ', recordedBlobs);
@@ -178,12 +202,16 @@ function stopRecording() {
   recognition.stop();
   // recordButton.disabled = true;
   // recordButton.destroy();
-  $("#conf_score").text("Confidence score:" + getAvg(confidences));
-  $("#transcript").text("Transcript: " + final_transcript);
+  $("#clarity_score").text(Math.floor(getAvg(confidences)) + "%");
+  $("#conf_score").text(fillerCounter(final_transcript) + "%")
+  $("#transcript").text(final_transcript);
   $("#download").show();
   // $("#record").hide();
-  // $("#gum").hide();
+  $("#gum").hide();
+  $("#recorder").show();
+  $("#results-div").show()
   play();
+
 }
 
 function play() {
