@@ -134,6 +134,7 @@ function toggleRecording() {
 // The nested try blocks will be simplified when Chrome 47 moves to Stable
 function startRecording() {
   $("#recorded").hide();
+  $("#downloads").hide();
   $("#gum").show();
   $("#question").text(randQuestion());
 
