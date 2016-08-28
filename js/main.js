@@ -204,7 +204,7 @@ recognition.onresult = function(event) {
     }
 
   }  
-  console.log(interim_transcript);
+  final_transcript = interim_transcript;
 }
 
 
