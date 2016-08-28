@@ -55,7 +55,7 @@ function randQuestion() {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-$("#download").hide();
+$("#downloads").hide();
 
 
 function getAvg(grades) {
@@ -206,7 +206,7 @@ function stopRecording() {
   $("#clarity_score").text(Math.floor(getAvg(confidences)) + "%");
   $("#conf_score").text(fillerCounter(final_transcript) + "%")
   $("#transcript").text(final_transcript);
-  $("#download").show();
+  $("#downloads").show();
   // $("#record").hide();
   $("#gum").hide();
   $("#recorder").show();
