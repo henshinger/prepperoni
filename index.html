@@ -31,61 +31,28 @@
 <body>
 
   <div id="container">
-    <nav class="navbar navbar-default navbar-fixed-top templatemo-nav" role="navigation">
-			<div class="container">
-				<div class="navbar-header">
-					<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="icon icon-bar"></span>
-						<span class="icon icon-bar"></span>
-						<span class="icon icon-bar"></span>
-					</button>
-					<a href="#"><img src="images/prepperoniv4.png" class="navbar-brand"><span class="navbar-brand">Prepperoni</span></a>
-				</div>
-				<div class="collapse navbar-collapse">
-					<ul class="nav navbar-nav navbar-right text-uppercase">
-						<li><a href="#home">Home</a></li>
-						<li><a href="#feature">Log In</a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-    <div id="container-body">
-        <h1 class="text-center" id="title"> Preperroni </h1>
-        <p class="text-center" id-"tagline"> Making lives better //to change </p>
 
+    <h1><a href="//webrtc.github.io/samples/" title="WebRTC samples homepage">WebRTC samples</a> <span>MediaRecorder</span></h1>
 
-        <h1 id="question"></h1>
-        <video id="gum" autoplay muted></video>
-        <video id="recorded" autoplay loop></video>
+    <p>This demo requires Firefox 29 or later, or Chrome 47 or later with <strong>Enable experimental Web Platform features</strong> enabled from chrome://flags.</p>
 
-        <div class="text-center">
-          <button class="btn button-center btn-primary btn-lg "id="record" >Record</button>
-    <!--       <button id="play" disabled>Play</button>
-    -->      <button id="download" disabled>Download</button>
-        </div>
+    <p>For more information see the MediaStream Recording API <a href="http://w3c.github.io/mediacapture-record/MediaRecorder.html" title="W3C MediaStream Recording API Editor's Draft">Editor's&nbsp;Draft</a>.</p>
 
-    <div class="text-center">
+    <h1 id="question"></h1>
+    <video id="gum" autoplay muted></video>
+    <video id="recorded" autoplay loop></video>
+
+    <div>
+      <button id="record">Start Recording</button>
+<!--       <button id="play" disabled>Play</button>
+ -->      <button id="download" disabled>Download</button>
+    </div>
+
+    <div>
       <p id="conf_score"></p>
       <p id="clarity_score"></p>
       <p id="transcript"></p>
-    </div class="text-center">
-      <h1 id="question"></h1>
-      <video id="gum" autoplay muted></video>
-      <video id="recorded" autoplay loop></video>
-
-      <div class="text-center">
-        <button id="record">Start Recording</button>
-  <!--       <button id="play" disabled>Play</button>
-  -->      <button id="download" disabled>Download</button>
-      </div>
-
-      <div class="text-center">
-        <p id="conf_score"></p>
-        <p id="clarity_score"></p>
-        <p id="transcript"></p>
-      </div>
     </div>
-    
     
     <a href="https://github.com/webrtc/samples/tree/gh-pages/src/content/getusermedia/record" title="View source for this page on GitHub" id="viewSource">View source on GitHub</a>
 
