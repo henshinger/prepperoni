@@ -45,8 +45,8 @@ function randQuestion() {
     "What is your greatest weakness?",
     "Why do you want to work for us?",
     "Why did you leave your last job?",
-    "What is your greatest accomplishment",
-    "What is your greatest failure",
+    "What is your greatest accomplishment?",
+    "What is your greatest failure?",
     "Describe a difficult work situation and how you overcomed it",
     "Where do you see yourself in five years?",
     "Do you any questions for me?"
@@ -120,11 +120,11 @@ function handleStop(event) {
 }
 
 function toggleRecording() {
-  if (recordButton.textContent === 'Start Recording') {
+  if (recordButton.textContent === 'Next Question') {
     startRecording();
   } else {
     stopRecording();
-    recordButton.textContent = 'Start Recording';
+    recordButton.textContent = 'Next Question';
     // playButton.disabled = false;
     downloadButton.disabled = false;
   }
