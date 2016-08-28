@@ -20,7 +20,7 @@
 
   <base target="_blank">
 
-  <title>MediaStream Recording</title>
+  <title>Prepbot</title>
 
   <link rel="icon" sizes="192x192" href="../../../images/webrtc-icon-192x192.png">
   <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
@@ -64,8 +64,8 @@
 		</nav>
   <div class="row" id="container" style= "padding-top: 100px">
     <div class="col-md-12 text-center" style= "height: 100vh">
-      <h1 class="text-center">QUESTION:</h1>
-      <h1 class="text-center" style="font-size: 10em;">1. Tell me about yourself</h1>
+      <!-- <h1 class="text-center">QUESTION:</h1> -->
+      <h1 class="text-center" style="font-size: 8em;" id="question">1. Tell me about yourself</h1>
 
       <div>
         <button id="record" class="btn btn-primary btn-lg">Start</button>
@@ -73,7 +73,7 @@
   -->   <button id="download" class="btn btn-lg" style= "width: 150px">Download</button>
         <button id="see-results" class="btn btn-primary btn-lg" onclick="scrollWin()">See Results</button>
       </div>
-      <video id="gum" autoplay muted></video>
+      <video id="gum" autoplay muted style="float:left;"></video>
       <video id="recorded" autoplay loop></video>
     </div>
 
@@ -83,7 +83,7 @@
       <div></div>
       <h1 id="results " class="text-center">Results</h1>
 
-      <div>
+      <div style="display: block; margin:auto">
         <p id="conf_score"></p>
         <p id="clarity_score"></p>
         <p id="transcript"></p>

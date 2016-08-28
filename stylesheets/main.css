@@ -59,9 +59,6 @@ video#gumVideo {
   }
 }
 
-p {
-  color:red;
-}
 #container{
   opacity:0.8;
   background-image: url('../images/bg.png');
