@@ -209,9 +209,10 @@ function stopRecording() {
   $("#downloads").show();
   // $("#record").hide();
   $("#gum").hide();
-  $("#recorder").show();
+  $("#recorded").show();
   $("#results-div").show();
   $("#see-results").show();
+
   play();
 
 }
