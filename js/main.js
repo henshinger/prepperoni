@@ -1,4 +1,4 @@
-$("#recorder").hide();
+$("#recorded").hide();
 $("#results-div").hide();
 $("#see-results").hide();
 var mediaSource = new MediaSource();
@@ -133,7 +133,7 @@ function toggleRecording() {
 
 // The nested try blocks will be simplified when Chrome 47 moves to Stable
 function startRecording() {
-  $("#recorder").hide();
+  $("#recorded").hide();
   $("#gum").show();
   $("#question").text(randQuestion());
 
