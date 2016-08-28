@@ -198,9 +198,10 @@ recognition.onresult = function(event) {
   for (var i = event.resultIndex; i < event.results.length; ++i) {
     if (event.results[i].isFinal) {
       final_transcript += event.results[i][0].transcript;
-      confidences.push(event.results[i][0].confidence);
     } else {
       interim_transcript += event.results[i][0].transcript;
+      confidences.push(event.results[i][0].confidence);
+
     }
 
   }  
