@@ -1,5 +1,6 @@
 $("#recorder").hide();
 $("#results-div").hide();
+$("#see-results").hide();
 var mediaSource = new MediaSource();
 mediaSource.addEventListener('sourceopen', handleSourceOpen, false);
 var mediaRecorder;
@@ -11,7 +12,7 @@ var recordedVideo = document.querySelector('video#recorded');
 
 var recordButton = document.querySelector('button#record');
 // var playButton = document.querySelector('button#play');
-var downloadButton = document.querySelector('button#download');
+var downloadButton = document.querySelector('button#downloads');
 recordButton.onclick = toggleRecording;
 // playButton.onclick = play;
 downloadButton.onclick = download;
@@ -209,7 +210,8 @@ function stopRecording() {
   // $("#record").hide();
   $("#gum").hide();
   $("#recorder").show();
-  $("#results-div").show()
+  $("#results-div").show();
+  $("#see-results").show();
   play();
 
 }
