@@ -50,7 +50,7 @@ function randQuestion() {
     "What is your greatest failure?",
     "Describe a difficult work situation and how you overcomed it",
     "Where do you see yourself in five years?",
-    "Do you any questions for me?"
+    "Do you have any questions for me?"
   ];
   return arr[Math.floor(Math.random() * arr.length)];
 }
