@@ -120,7 +120,7 @@ function handleStop(event) {
 }
 
 function toggleRecording() {
-  if (recordButton.textContent === 'Next Question') {
+  if ((recordButton.textContent === 'Next Question') ||  (recordButton.textContent === 'Start')) {
     startRecording();
   } else {
     stopRecording();
