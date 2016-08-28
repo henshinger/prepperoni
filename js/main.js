@@ -51,7 +51,7 @@ function randQuestion() {
     "Where do you see yourself in five years?",
     "Do you any questions for me?"
   ];
-  return arr[Math.floor(Math.random() * arr.length))];
+  return arr[Math.floor(Math.random() * arr.length)];
 }
 
 $("#download").hide();
