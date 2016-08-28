@@ -1,4 +1,5 @@
 
+
 var mediaSource = new MediaSource();
 mediaSource.addEventListener('sourceopen', handleSourceOpen, false);
 var mediaRecorder;
@@ -36,7 +37,25 @@ recognition.lang = 'en-US';
 recognition.interimResults = true;
 recognition.maxAlternatives = 1;
 
-$("#download").hide()
+function randQuestion() {
+  var arr = [
+    "Tell me about yourself",
+    "Why should we hire you?",
+    "What is your greatest strength?",
+    "What is your greatest weakness?",
+    "Why do you want to work for us?",
+    "Why did you leave your last job?",
+    "What is your greatest accomplishment",
+    "What is your greatest failure",
+    "Describe a difficult work situation and how you overcomed it",
+    "Where do you see yourself in five years?",
+    "Do you any questions for me?"
+  ];
+  return arr[Math.floor(Math.random() * arr.length))];
+}
+
+$("#download").hide();
+
 
 function getAvg(grades) {
  if (grades.length < 1) return 0;
@@ -113,6 +132,8 @@ function toggleRecording() {
 
 // The nested try blocks will be simplified when Chrome 47 moves to Stable
 function startRecording() {
+  $("#question").text(randQuestion());
+
   recordedBlobs = [];
   var options = {mimeType: 'video/webm;codecs=vp9'};
   if (!MediaRecorder.isTypeSupported(options.mimeType)) {
