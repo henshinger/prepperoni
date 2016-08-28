@@ -157,8 +157,8 @@ function stopRecording() {
   recognition.stop();
   // recordButton.disabled = true;
   // recordButton.destroy();
-  $("#conf_score").text(getAvg(confidences));
-  $("#transcript").text(final_transcript);
+  $("#conf_score").text("Confidence score:" + getAvg(confidences));
+  $("#transcript").text("Transcript: " + final_transcript);
   $("#download").show();
   // $("#record").hide();
   // $("#gum").hide();
