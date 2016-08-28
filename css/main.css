@@ -10,6 +10,11 @@
   width: 99px;
   padding-left: 2px;
   padding-right: 2px;
+
+}
+
+#record {
+  width: 200px;
 }
 
 button:last-of-type {
